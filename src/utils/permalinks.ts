@@ -104,27 +104,41 @@ export const getAsset = (path: string): string =>
 const definitivePermalink = (permalink: string): string => createPath(BASE_PATHNAME, permalink);
 
 /** */
+// @ts-expect-error no types for menu
 export const applyGetPermalinks = (menu: object = {}) => {
   if (Array.isArray(menu)) {
+    // @ts-expect-error no types for menu
     return menu.map((item) => applyGetPermalinks(item));
   } else if (typeof menu === 'object' && menu !== null) {
     const obj = {};
     for (const key in menu) {
       if (key === 'href') {
+        // @ts-expect-error no types for menu
         if (typeof menu[key] === 'string') {
+          // @ts-expect-error no types for menu
           obj[key] = getPermalink(menu[key]);
+          // @ts-expect-error no types for menu
         } else if (typeof menu[key] === 'object') {
+          // @ts-expect-error no types for menu
           if (menu[key].type === 'home') {
+            // @ts-expect-error no types for menu
             obj[key] = getHomePermalink();
+            // @ts-expect-error no types for menu
           } else if (menu[key].type === 'blog') {
+            // @ts-expect-error no types for menu
             obj[key] = getBlogPermalink();
+            // @ts-expect-error no types for menu
           } else if (menu[key].type === 'asset') {
+            // @ts-expect-error no types for menu
             obj[key] = getAsset(menu[key].url);
+            // @ts-expect-error no types for menu
           } else if (menu[key].url) {
+            // @ts-expect-error no types for menu
             obj[key] = getPermalink(menu[key].url, menu[key].type);
           }
         }
       } else {
+        // @ts-expect-error no types for menu
         obj[key] = applyGetPermalinks(menu[key]);
       }
     }
