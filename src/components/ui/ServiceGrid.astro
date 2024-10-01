@@ -6,7 +6,7 @@ const { services = [] } = Astro.props;
 ---
 
 <Fragment>
-  <div class="flex flex-row mt-6 w-full md:mt-14 overflow-x-scroll snap-x snap-mandatory">
+  <div class="flex flex-row mt-6 max-w-full md:mt-14 overflow-x-scroll snap-x snap-mandatory">
     <!-- EMPTY DIV FOR SPACING ON XL -->
     <div class="snap-start xl:block xl:min-w-72"></div>
     {
@@ -14,11 +14,13 @@ const { services = [] } = Astro.props;
       <div class="snap-start min-w-4"></div>
         <div class="min-w-72 bg-white">
           <Image src={service.image} alt={service.title} />
-          <h3 class="text-lg font-bold mt-6 px-5">{service.title}</h3>
-          <p class="text-base text-[#000000de] mt-4 px-5">{service.description}</p>
-          <Button href={'/services/' + service.slug} class="mt-6" variant="tertiary" class="text-sm w-full py-2 mt-6">
-            See Detail
-          </Button>
+          <div class="px-5 py-2">
+            <h3 class="text-lg font-bold mt-6">{service.title}</h3>
+            <p class="text-base text-[#000000de] mt-4">{service.description}</p>
+            <Button href={'/services/' + service.slug} class="mt-6" variant="tertiary" class="text-sm w-full py-2 mt-6">
+              See Detail
+            </Button>
+          </div>
         </div>
       ))
     }
