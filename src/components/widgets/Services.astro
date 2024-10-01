@@ -1,0 +1,21 @@
+---
+import WidgetHeadline from '~/components/ui/WidgetHeadline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import ServiceGrid from '~/components/ui/ServiceGrid.astro';
+
+const {
+  title = 'Services',
+  subtitle = 'We offer a wide range of services to help you grow your business.',
+  services = []
+} = Astro.props;
+---
+
+<WidgetWrapper containerClass='px-0 md:px-0'>
+  <WidgetHeadline
+    title={title}
+    subtitle={subtitle}
+    seeAllLink={{ href: '/services', text: 'See All' }}
+  />
+
+  <ServiceGrid services={services} />
+</WidgetWrapper>
