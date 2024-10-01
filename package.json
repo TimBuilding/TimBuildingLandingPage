@@ -21,6 +21,7 @@
     "fix:prettier": "prettier -w ."
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.3",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "@astrolib/analytics": "^0.5.0",
@@ -31,9 +32,8 @@
     "astro-icon": "^1.1.1",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
-    "unpic": "^3.18.0",
-    "@astrojs/check": "^0.9.3",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "unpic": "^3.18.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.3",
@@ -59,6 +59,7 @@
     "mdast-util-to-string": "^4.0.0",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.8",
     "reading-time": "^1.5.0",
     "sharp": "0.33.5",
     "tailwind-merge": "^2.5.2",
