@@ -3,6 +3,7 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import WidgetHeadline from '~/components/ui/WidgetHeadline.astro';
 import ExpertiseGrid from '~/components/ui/ExpertiseGrid.astro';
 import ExpertiseIcons from '~/components/ui/ExpertiseIcons.astro';
+import ExpertiseVector from '~/components/ui/ExpertiseVector.astro';
 
 const {
   title = 'Expertise',
@@ -12,7 +13,12 @@ const {
 ---
 
 <WidgetWrapper>
-  <WidgetHeadline title={title} subtitle={subtitle} subtitleClass="mt-6" />
-  <ExpertiseGrid expertise={expertise} />
+  <div class="flex flex-row items-center gap-6">
+    <div class="md:w-1/2">
+      <WidgetHeadline title={title} subtitle={subtitle} subtitleClass="mt-6" />
+      <ExpertiseGrid expertise={expertise} />
+    </div>
+    <ExpertiseVector />
+  </div>
   <ExpertiseIcons />
 </WidgetWrapper>
