@@ -1,0 +1,25 @@
+---
+const { testimonials = [] } = Astro.props;
+---
+
+<div class="mt-4 flex flex-row overflow-x-auto py-4 snap-x snap-mandatory" style="scrollbar-width: none; -ms-overflow-style: none;">
+  {
+    testimonials.map((testimonial: { text: string; avatar: string; name: string; position: string }) => (
+    <div class="snap-start min-w-8"></div>
+      <div class="min-h-72 min-w-80 gap-4 overflow-hidden rounded-bl-[100px] bg-white px-10 pb-8 pt-6 shadow-md">
+        <p class="line-clamp-6 h-40 w-full overflow-hidden text-base">{testimonial.text}</p>
+        <div class="flex w-full flex-row items-center justify-start gap-4">
+          <img
+            src={testimonial.avatar}
+            alt={testimonial.name}
+            class="h-16 w-16 rounded-tr-[40px] border-4 border-[#2196f3]"
+          />
+          <div class="flex flex-col gap-1">
+            <p class="text-base font-bold">{testimonial.name}</p>
+            <p class="text-xs italic text-[#808080]">{testimonial.position}</p>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
