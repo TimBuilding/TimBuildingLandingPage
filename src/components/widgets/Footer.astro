@@ -3,12 +3,15 @@ import FooterNavigation from '~/components/ui/FooterNavigation.astro';
 ---
 
 <Fragment>
-  <footer class="mx-auto w-full max-w-md">
-    <div class="flex w-full flex-col items-center justify-center gap-6 px-4 pb-4 pt-8">
-      <span class="text-2xl font-bold">TimBuilding</span>
-      <p class="w-full text-center text-sm text-[#0009]">
+  <footer class="mx-auto flex w-full max-w-md flex-col items-center justify-center lg:max-w-7xl lg:flex-row lg:items-start">
+    <div class="flex w-full flex-col items-center justify-center lg:gap-2 gap-6 px-4 pb-4 pt-8 lg:max-w-52 lg:items-start">
+      <span class="text-2xl font-bold lg:text-left">TimBuilding</span>
+      <p class="w-full text-center text-sm text-[#0009] lg:text-left">
         We work with international startups, help entrepreneurs launch for the long term.
       </p>
+      <div class="mb-4 mt-8 hidden flex-col items-center justify-center lg:flex">
+        <span class="w-full text-center text-sm text-[#0009]">&copy; {new Date().getFullYear()} TimBuilding</span>
+      </div>
     </div>
     <FooterNavigation
       navigations={[
@@ -27,7 +30,7 @@ import FooterNavigation from '~/components/ui/FooterNavigation.astro';
       ]}
     />
 
-    <div class="mb-4 mt-8 flex flex-col items-center justify-center">
+    <div class="mb-4 mt-8 flex flex-col items-center justify-center lg:hidden">
       <span class="w-full text-center text-sm text-[#0009]">&copy; {new Date().getFullYear()} TimBuilding</span>
     </div>
   </footer>

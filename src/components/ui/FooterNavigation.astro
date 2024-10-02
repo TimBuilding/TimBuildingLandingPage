@@ -2,9 +2,9 @@
 const { navigations = [] } = Astro.props;
 ---
 
-<div class="flex flex-col gap-4 px-4 pt-12">
+<div class="flex w-full lg:w-fit flex-col items-start gap-4 px-4 pt-12 lg:pt-6 lg:flex-row">
   {
-    navigations.map((navigation: { href: string, title: string }) => (
+    navigations.map((navigation: { href: string; title: string }) => (
       <div class="px-4 py-3">
         <a href={navigation.href} class="text-base font-bold text-[#ff6f00]">
           {navigation.title}
