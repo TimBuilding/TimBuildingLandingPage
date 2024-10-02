@@ -1,0 +1,15 @@
+---
+import Javascript from 'src/assets/images/javascript-color.svg?raw';
+import Nextjs from 'src/assets/images/nextdotjs-color.svg?raw';
+import Supabase from 'src/assets/images/supabase-color.svg?raw';
+import React from 'src/assets/images/react-color.svg?raw';
+import Tailwind from 'src/assets/images/tailwindcss-color.svg?raw';
+---
+
+<div class="flex flex-row justify-center gap-16 p-8 mt-6">
+  <div set:html={Javascript} class="h-16 w-16 grayscale transition-all duration-300 hover:grayscale-0" />
+  <div set:html={Nextjs} class="h-16 w-16 opacity-50 transition-all duration-300 hover:opacity-100" />
+  <div set:html={Supabase} class="h-16 w-16 grayscale transition-all duration-300 hover:grayscale-0" />
+  <div set:html={React} class="h-16 w-16 grayscale transition-all duration-300 hover:grayscale-0" />
+  <div set:html={Tailwind} class="h-16 w-16 grayscale transition-all duration-300 hover:grayscale-0" />
+</div>

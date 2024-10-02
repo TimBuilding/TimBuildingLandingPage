@@ -4,17 +4,26 @@ import { twMerge } from 'tailwind-merge';
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
+  subtitleClass = '',
   textClass = '',
+  seeAllLink = null
 } = Astro.props;
 ---
 
-<div class="flex flex-col items-center md:flex-row px-4 md:justify-between md:gap-2 md:px-6 w-full max-w-7xl mx-auto">
+<div class="mx-auto flex w-full max-w-7xl flex-col items-center px-4 md:flex-row md:justify-between md:gap-2 md:px-6">
   <div class={twMerge('text-center md:text-left', textClass)}>
     {title && <h2 class="text-2xl font-bold md:text-3xl">{title}</h2>}
-    {subtitle && <p class="text-muted md:text-xl">{subtitle}</p>}
+    {subtitle && <p class={twMerge('text-muted md:text-xl', subtitleClass)}>{subtitle}</p>}
   </div>
-  <a href={'/services'} class="text-primary uppercase text-[#1565c0] md:text-2xl flex-shrink-0 font-bold text-sm flex mt-4 items-center gap-2">
-    See All
-    <Icon name="tabler:arrow-right" class="w-4 h-4 md:w-6 md:h-6" />
-  </a>
+  {
+    seeAllLink && (
+      <a
+        href={seeAllLink.href}
+        class="mt-4 flex flex-shrink-0 items-center gap-2 text-sm font-bold uppercase text-[#1565c0] text-primary md:text-2xl"
+      >
+        See All
+        <Icon name="tabler:arrow-right" class="h-4 w-4 md:h-6 md:w-6" />
+      </a>
+    )
+  }
 </div>

@@ -1,0 +1,18 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import WidgetHeadline from '~/components/ui/WidgetHeadline.astro';
+import ExpertiseGrid from '~/components/ui/ExpertiseGrid.astro';
+import ExpertiseIcons from '~/components/ui/ExpertiseIcons.astro';
+
+const {
+  title = 'Expertise',
+  subtitle = 'We are experts in the field of business solutions.',
+  expertise = [],
+} = Astro.props;
+---
+
+<WidgetWrapper>
+  <WidgetHeadline title={title} subtitle={subtitle} subtitleClass="mt-6" />
+  <ExpertiseGrid expertise={expertise} />
+  <ExpertiseIcons />
+</WidgetWrapper>

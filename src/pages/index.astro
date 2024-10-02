@@ -12,6 +12,7 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Services from '~/components/widgets/Services.astro';
+import Expertise from '~/components/widgets/Expertise.astro';
 
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
@@ -80,45 +81,77 @@ const metadata = {
       {
         title: 'Web Development',
         description: 'We develop websites using the latest technologies and best practices.',
-        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        image:
+          'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         slug: 'web-development',
       },
       {
         title: 'Web Development',
         description: 'We develop websites using the latest technologies and best practices.',
-        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        image:
+          'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         slug: 'web-development',
       },
       {
         title: 'Web Development',
         description: 'We develop websites using the latest technologies and best practices.',
-        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        image:
+          'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         slug: 'web-development',
       },
       {
         title: 'Web Development',
         description: 'We develop websites using the latest technologies and best practices.',
-        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        image:
+          'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         slug: 'web-development',
       },
       {
         title: 'Web Development',
         description: 'We develop websites using the latest technologies and best practices.',
-        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        image:
+          'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         slug: 'web-development',
       },
       {
         title: 'Web Development',
         description: 'We develop websites using the latest technologies and best practices.',
-        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        image:
+          'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         slug: 'web-development',
       },
       {
         title: 'Web Development',
         description: 'We develop websites using the latest technologies and best practices.',
-        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        image:
+          'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         slug: 'web-development',
       },
+    ]}
+  />
+
+  <!-- Expertise Widget ************* -->
+
+  <Expertise
+    title="Our Expertise"
+    subtitle="Which is why we provide you with the human resources you need to build whenever you need them. Your team is dedicated to your projects. And the team is flexible!"
+    expertise={[
+      'Web Development',
+      'Mobile Development',
+      'UI/UX Design',
+      'SEO',
+      'Marketing',
+      'Consulting',
+      'Project Management',
+      'Business Development',
+      'Data Analysis',
+      'Machine Learning',
+      'AI Development',
+      'Blockchain Development',
+      'Cloud Computing',
+      'DevOps',
+      'Security',
+      'Testing',
     ]}
   />
 
@@ -151,7 +184,7 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
+      <h3 class="mb-2 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white">Building on modern foundations</h3>
       Gain a competitive advantage by incorporating industry leading practices
     </Fragment>
 
