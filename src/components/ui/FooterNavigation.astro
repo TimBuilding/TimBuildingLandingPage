@@ -1,0 +1,15 @@
+---
+const { navigations = [] } = Astro.props;
+---
+
+<div class="flex flex-col gap-4 px-4 pt-12">
+  {
+    navigations.map((navigation: { href: string, title: string }) => (
+      <div class="px-4 py-3">
+        <a href={navigation.href} class="text-base font-bold text-[#ff6f00]">
+          {navigation.title}
+        </a>
+      </div>
+    ))
+  }
+</div>
