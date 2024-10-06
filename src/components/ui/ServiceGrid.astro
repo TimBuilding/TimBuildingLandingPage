@@ -12,7 +12,7 @@ const { services = [] } = Astro.props;
     {
       services.map((service: { title: string; description: string; image: string; slug: string }) => (
       <div class="snap-start min-w-4"></div>
-        <div class="min-w-72 bg-white">
+        <div class="min-w-72 bg-white shadow-lg">
           <Image src={service.image} alt={service.title} />
           <div class="px-5 py-2">
             <h3 class="text-lg font-bold mt-6">{service.title}</h3>
