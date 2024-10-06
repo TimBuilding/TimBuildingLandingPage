@@ -94,3 +94,14 @@
 .dd *:first-child {
   margin-top: 0;
 }
+
+/* vectors */
+.triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.parallelogram {
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+.circle {
+  clip-path: circle(50%);
+}
