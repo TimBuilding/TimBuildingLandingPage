@@ -1,0 +1,36 @@
+---
+import Image from '~/components/common/Image.astro';
+import Button from '~/components/ui/Button.astro';
+
+const { services = [] } = Astro.props;
+---
+
+<Fragment>
+  <div class="flex flex-row mt-6 w-full md:mt-14 overflow-x-scroll snap-x snap-mandatory">
+    <!-- EMPTY DIV FOR SPACING ON XL -->
+    <div class="snap-start xl:block xl:min-w-72"></div>
+    {
+      services.map((service: { title: string; description: string; image: string; slug: string }) => (
+      <div class="snap-start min-w-4"></div>
+        <div class="min-w-72 bg-white">
+          <Image src={service.image} alt={service.title} />
+          <h3 class="text-lg font-bold mt-6 px-5">{service.title}</h3>
+          <p class="text-base text-[#000000de] mt-4 px-5">{service.description}</p>
+          <Button href={'/services/' + service.slug} class="mt-6" variant="tertiary" class="text-sm w-full py-2 mt-6">
+            See Detail
+          </Button>
+        </div>
+      ))
+    }
+    <!-- EMPTY DIV FOR SPACING ON XL -->
+    <div class="snap-start xl:block xl:min-w-72"></div>
+  </div>
+  <div class="hidden xl:block relative">
+    <div
+      class="absolute bottom-10 -z-10 left-10 w-0 h-0 border-r-[150px] border-r-transparent border-b-[150px] border-b-yellow-500"
+    >
+    </div>
+
+    <div class="absolute bottom-0 left-52 -z-10 w-36 h-36 bg-[#00BCD4] rounded-r-full"></div>
+  </div>
+</Fragment>

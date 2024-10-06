@@ -1,0 +1,20 @@
+---
+import { Icon } from 'astro-icon/components';
+import { twMerge } from 'tailwind-merge';
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  textClass = '',
+} = Astro.props;
+---
+
+<div class="flex flex-col items-center md:flex-row px-4 md:justify-between md:gap-2 md:px-6 w-full">
+  <div class={twMerge('text-center md:text-left', textClass)}>
+    {title && <h2 class="text-2xl font-bold md:text-3xl">{title}</h2>}
+    {subtitle && <p class="text-muted md:text-xl">{subtitle}</p>}
+  </div>
+  <a href={'/services'} class="text-primary uppercase text-[#1565c0] md:text-2xl flex-shrink-0 font-bold text-sm flex mt-4 items-center gap-2">
+    See All
+    <Icon name="tabler:arrow-right" class="w-4 h-4 md:w-6 md:h-6" />
+  </a>
+</div>
