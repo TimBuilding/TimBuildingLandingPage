@@ -3,15 +3,13 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import ItemGrid from '~/components/ui/ItemGrid.astro';
 import Headline from '~/components/ui/Headline.astro';
 import type { Features as Props } from '~/types';
+import Image from '~/components/common/Image.astro';
 
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
   items = [],
-  columns = 2,
-
-  defaultIcon,
 
   id,
   isDark = false,
@@ -20,17 +18,55 @@ const {
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
-  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
-  <ItemGrid
-    items={items}
-    columns={columns}
-    defaultIcon={defaultIcon}
-    classes={{
-      container: '',
-      title: 'md:text-[1.3rem]',
-      icon: 'text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0',
-      ...((classes?.items as Record<string, never>) ?? {}),
-    }}
-  />
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-5xl lg:flex flex-row items-center justify-center gap-11 ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <div class="relative lg:w-1/2 hidden lg:flex flex-col xl:translate-y-20 translate-y-20">
+    <Image
+      src="src/assets/images/boys_talking.png"
+      alt="logo"
+      width={131}
+      height={131}
+      class={'-translate-y-10 translate-x-60 rounded-full'}
+    />
+    <Image
+      src="src/assets/images/boys_talking.png"
+      alt="logo"
+      width={100}
+      height={100}
+      class={'-translate-y-32 -translate-x-28 rounded-full'}
+    />
+    <Image
+      src="src/assets/images/girl_laptop.png"
+      alt="logo"
+      width={293}
+      height={220}
+      class={'-translate-y-28 -translate-x-10'}
+    />
+
+    <div class="border-[10px] border-[#2196f3] rounded-tr-[7.5rem] w-[400px] h-[300px] absolute top-0 -z-10">
+      <div class="border-[10px] border-[#ffc107] rounded-full w-[50px] h-[50px] mt-5 ml-4"></div>
+    <div class="absolute -bottom-10 right-20 w-0 h-0 border-l-[150px] border-l-transparent border-b-[150px] border-b-[#00BCD4]"></div>
+    </div>
+  </div>
+  <div class="lg:w-1/2 flex flex-col">
+    <Headline
+      title={title}
+      subtitle={subtitle}
+      tagline={tagline}
+      classes={classes?.headline as Record<string, string>}
+    />
+    <ItemGrid
+      items={items}
+      classes={{
+        container: '',
+        title: 'md:text-[1.3rem]',
+        icon: 'text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0',
+        ...((classes?.items as Record<string, never>) ?? {}),
+      }}
+    />
+  </div>
 </WidgetWrapper>
