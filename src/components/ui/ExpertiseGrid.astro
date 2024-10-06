@@ -1,0 +1,13 @@
+---
+const { expertise = [] } = Astro.props;
+---
+
+<div class="mt-9 flex w-fit flex-wrap items-center justify-center gap-3">
+  {
+    expertise.map((item: string) => (
+      <div class="w-fit border border-[#0000001f] bg-white p-1">
+        <span class="text-base">{item}</span>
+      </div>
+    ))
+  }
+</div>
