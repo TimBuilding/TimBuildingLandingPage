@@ -17,18 +17,11 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
   actions = await Astro.slots.render('actions'),
-
-  id,
-  isDark = false,
-  classes = {},
-  bg = await Astro.slots.render('bg'),
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <div
-    class="max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600"
-  >
+<WidgetWrapper>
+  <div class="relative bg-[#2196f3] px-4 pb-6 pt-10 text-white">
     <Headline
       title={title}
       subtitle={subtitle}
@@ -36,16 +29,19 @@ const {
       classes={{
         container: 'mb-0 md:mb-0',
         title: 'text-4xl md:text-4xl font-bold tracking-tighter mb-4 font-heading',
-        subtitle: 'text-xl text-muted dark:text-slate-400',
+        subtitle: 'text-lg text-white dark:text-slate-400',
       }}
     />
     {
       actions && (
-        <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 mt-6">
+        <div class="m-auto mt-4 flex flex-col flex-nowrap gap-4 sm:flex-row sm:justify-center">
           {Array.isArray(actions) ? (
             actions.map((action) => (
-              <div class="flex w-full sm:w-auto">
-                <Button {...(action || {})} class="w-full sm:mb-0" />
+              <div class="flex w-full">
+                <Button
+                  {...(action || {})}
+                  class="w-full bg-white text-[#2196f3] hover:bg-white/90 hover:text-[#2196f3] sm:mb-0"
+                />
               </div>
             ))
           ) : (
@@ -54,5 +50,12 @@ const {
         </div>
       )
     }
+
+    <!-- Vector Designs -->
+    <div class="absolute -top-3 left-12 z-20 h-10 w-10 bg-[#bbf8fb]"></div>
+    <div class="absolute -top-4 left-8 z-10 h-6 w-6 border-[5px] border-[#ffc107] bg-transparent"></div>
+    <div class="absolute -bottom-8 left-16 z-10 h-12 w-12 rounded-full border-[5px] border-[#bbdefb] bg-transparent">
+    </div>
+    <div class="absolute -top-8 right-10 h-16 w-16 rounded-full bg-[#ffc107]"></div>
   </div>
 </WidgetWrapper>
