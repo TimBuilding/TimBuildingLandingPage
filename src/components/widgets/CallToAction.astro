@@ -21,7 +21,9 @@ const {
 ---
 
 <WidgetWrapper>
-  <div class="relative bg-[#2196f3] px-4 pb-6 pt-10 text-white">
+  <div
+    class="relative flex w-full flex-col items-center justify-center bg-[#2196f3] px-4 pb-6 pt-10 text-white lg:flex-row lg:py-10"
+  >
     <Headline
       title={title}
       subtitle={subtitle}
@@ -34,13 +36,13 @@ const {
     />
     {
       actions && (
-        <div class="m-auto mt-4 flex flex-col flex-nowrap gap-4 sm:flex-row sm:justify-center">
+        <div class="m-auto mt-4 flex w-full flex-col flex-nowrap gap-4 sm:flex-row sm:justify-center md:w-1/2 lg:w-fit">
           {Array.isArray(actions) ? (
             actions.map((action) => (
               <div class="flex w-full">
                 <Button
                   {...(action || {})}
-                  class="w-full bg-white text-[#2196f3] hover:bg-white/90 hover:text-[#2196f3] sm:mb-0"
+                  class="z-30 w-full bg-white text-[#2196f3] hover:bg-white/90 hover:text-[#2196f3] sm:mb-0 lg:bg-[#2196f3] lg:text-white lg:hover:bg-[#2196f3]/90 lg:hover:text-white"
                 />
               </div>
             ))
@@ -50,6 +52,12 @@ const {
         </div>
       )
     }
+
+    <!-- LG Vectors -->
+    <div class="absolute left-0 top-0 hidden h-full w-full overflow-hidden lg:block">
+      <div class="absolute -top-56 left-48 h-56 w-[700px] rotate-12 bg-[#1565c0]"></div>
+      <div class="absolute -top-52 right-10 h-[700px] w-96 rotate-45 bg-[#bbdefb]"></div>
+    </div>
 
     <!-- Vector Designs -->
     <div class="absolute -top-3 left-12 z-20 h-10 w-10 bg-[#bbf8fb]"></div>
