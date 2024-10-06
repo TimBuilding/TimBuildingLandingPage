@@ -40,6 +40,7 @@ const generatePermalink = async ({
     .join('/');
 };
 
+
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
   const { id, slug: rawSlug = '', data } = post;
   const { Content, remarkPluginFrontmatter } = await post.render();
@@ -102,7 +103,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
 const load = async function (): Promise<Array<Post>> {
   const posts = await getCollection('post');
-  const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
+  const normalizedPosts = await Promise.all(posts.map((post: CollectionEntry<'post'>) => getNormalizedPost(post)));
 
   const results = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
@@ -201,6 +202,7 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
   const categories = {};
   posts.map((post) => {
     if (post.category?.slug) {
+      // @ts-expect-error no types for categories
       categories[post.category?.slug] = post.category;
     }
   });
@@ -211,6 +213,7 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
       {
         params: { category: categorySlug, blog: CATEGORY_BASE || undefined },
         pageSize: blogPostsPerPage,
+        // @ts-expect-error no types for categories
         props: { category: categories[categorySlug] },
       }
     )
@@ -226,6 +229,7 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
   posts.map((post) => {
     if (Array.isArray(post.tags)) {
       post.tags.map((tag) => {
+        // @ts-expect-error no types for tags
         tags[tag?.slug] = tag;
       });
     }
@@ -237,6 +241,7 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
       {
         params: { tag: tagSlug, blog: TAG_BASE || undefined },
         pageSize: blogPostsPerPage,
+        // @ts-expect-error no types for tags
         props: { tag: tags[tagSlug] },
       }
     )
