@@ -1,18 +1,17 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Expertise from '~/components/widgets/Expertise.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
 import Services from '~/components/widgets/Services.astro';
-import Expertise from '~/components/widgets/Expertise.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps from '~/components/widgets/Steps.astro';
 
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
@@ -137,27 +136,27 @@ const metadata = {
     subtitle="Which is why we provide you with the human resources you need to build whenever you need them. Your team is dedicated to your projects. And the team is flexible!"
     expertise={[
       'Web Development',
-      'Mobile Development',
       'UI/UX Design',
       'SEO',
+      'Mobile Development',
       'Marketing',
       'Consulting',
-      'Project Management',
-      'Business Development',
-      'Data Analysis',
-      'Machine Learning',
-      'AI Development',
-      'Blockchain Development',
-      'Cloud Computing',
-      'DevOps',
-      'Security',
-      'Testing',
+      // 'Project Management',
+      // 'Business Development',
+      // 'Data Analysis',
+      // 'Machine Learning',
+      // 'AI Development',
+      // 'Blockchain Development',
+      // 'Cloud Computing',
+      // 'DevOps',
+      // 'Security',
+      // 'Testing',
     ]}
   />
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isReversed
     tagline="Inside template"
     title="AstroWind's Blueprint: Fun Meets Functionality!"
@@ -191,7 +190,7 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Steps Widget ****************** -->
 
