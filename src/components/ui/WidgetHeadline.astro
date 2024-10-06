@@ -8,7 +8,7 @@ const {
 } = Astro.props;
 ---
 
-<div class="flex flex-col items-center md:flex-row px-4 md:justify-between md:gap-2 md:px-6 w-full">
+<div class="flex flex-col items-center md:flex-row px-4 md:justify-between md:gap-2 md:px-6 w-full max-w-7xl mx-auto">
   <div class={twMerge('text-center md:text-left', textClass)}>
     {title && <h2 class="text-2xl font-bold md:text-3xl">{title}</h2>}
     {subtitle && <p class="text-muted md:text-xl">{subtitle}</p>}

@@ -18,6 +18,12 @@ module.exports = {
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
       },
     },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+    },
   },
   plugins: [typographyPlugin],
   darkMode: false,
